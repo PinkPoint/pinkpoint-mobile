@@ -1,6 +1,13 @@
 export default class HomeCtrl {
-    constructor() {
+    constructor(addRouteModal) {
+        this.addRouteModal = addRouteModal;
         this.dummydata();
+    }
+
+    addRoute() {
+        this.addRouteModal.open().then(r => {
+            this.routesToday.unshift(r);
+        });
     }
 
     dummydata() {

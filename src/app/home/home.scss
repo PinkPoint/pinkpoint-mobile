@@ -1,0 +1,18 @@
+button.button-material {
+  $button-material-radius: 25px;
+
+  position: absolute;
+  top: $bar-height + $bar-subheader-height - $button-material-radius;
+  right: 20px;
+  z-index: 100;
+  padding: 0;
+  width: $button-material-radius * 2;
+  height: $button-material-radius * 2;
+  border-radius: $button-material-radius;
+  border: none;
+
+  .platform-ios.platform-cordova:not(.fullscreen) & {
+      top: $bar-height + $bar-subheader-height + $ios-statusbar-height - $button-material-radius;
+  }
+}
+

@@ -1,0 +1,21 @@
+<ion-modal-view class="slide-in-up">
+    <ion-header-bar class="item-input-inset">
+        <label class="item-input-wrapper">
+            <i class="icon ion-ios7-search placeholder-icon"></i>
+            <input type="search" placeholder="ID (e.g. 345)">
+        </label>
+        <button class="button button-clear" ng-click="cancel()" translate>Cancel</button>
+    </ion-header-bar>
+    <ion-content>
+        <div class="list">
+            <a class="item item-icon-left"
+               href="#"
+               ng-repeat="route in routes"
+               ng-click="addRoute(route)">
+                <i class="icon ion-ribbon-a"></i>
+                {{route.name}}
+                <span class="badge badge-assertive">{{route.difficulty}}</span>
+            </a>
+        </div>
+    </ion-content>
+</ion-modal-view>

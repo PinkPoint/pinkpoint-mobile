@@ -1,0 +1,7 @@
+{
+  "name": "pinkpoint",
+  "private": "true",
+  "dependencies": {
+    "ionic": "1.0.0-rc.2"
+  }
+}

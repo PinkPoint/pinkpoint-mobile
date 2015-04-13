@@ -1,5 +1,18 @@
 <ion-view view-title="PinkPoint">
-    <ion-content>
-        <h2>Hello world</h2>
+    <overview></overview>
+    <ion-content class="has-subheader">
+        <div class="list">
+
+            <div class="item item-divider">
+                Today
+            </div>
+
+            <a class="item item-icon-left" href="#" ng-repeat="route in homeCtrl.routesToday">
+                <i class="icon ion-ribbon-a"></i>
+                {{route.name}}
+                <span class="badge badge-assertive">{{route.difficulty}}</span>
+            </a>
+
+        </div>
     </ion-content>
 </ion-view>

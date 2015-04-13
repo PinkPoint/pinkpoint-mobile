@@ -1,0 +1,24 @@
+#pinkpoint-menu {
+  .bar.bar-header {
+    background: $menu-bg;
+
+    h1 {
+      color: white;
+    }
+  }
+
+  .list {
+    .item {
+      background: $menu-bg;
+      border-color: #3A3E46;
+      color: white;
+      font-weight: 600;
+    }
+
+    .item-avatar {
+      h2 {
+        color: white;
+      }
+    }
+  }
+}

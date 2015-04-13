@@ -13,6 +13,7 @@ export default class AddRouteModal {
             this.modalScope.routes = routes;
         });
 
+        this.modalScope.search = {};
         this.modal.show();
         this.defered = this.$q.defer();
         return this.defered.promise;

@@ -3,7 +3,7 @@ import cordovaInit from './config/cordova.config';
 import HomeCtrl from './home/home';
 import OverviewDirective from './overview/overview';
 import AddRouteModal from './addroute/addroute';
-import PinkPointApi from './core/pinkpointApi';
+import {Routes} from './core/pinkpointApi';
 
 var dependencies = [
     'ionic'
@@ -14,6 +14,6 @@ angular
     .controller('HomeCtrl', HomeCtrl)
     .directive('overview', OverviewDirective)
     .service('addRouteModal', AddRouteModal)
-    .service('pinkPointApi', PinkPointApi)
+    .service('routes', Routes)
     .config(routes)
     .run(cordovaInit);

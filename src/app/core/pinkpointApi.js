@@ -1,20 +1,11 @@
-export default class PinkPointApi {
-    constructor($q) {
-        this.$q = $q;
+const baseUrl = 'http://projectpinkpoint.azurewebsites.net';
+
+export class Routes {
+    constructor($http) {
+        this.$http = $http;
     }
 
-    getAll() {
-        var defered = this.$q.defer();
-
-        defered.resolve([
-            { name: 'Birdman', difficulty: '6a'},
-            { name: 'Birdman2', difficulty: '5a'},
-            { name: 'Birdman3', difficulty: '5a'},
-            { name: 'Birdman4', difficulty: '5a'},
-            { name: 'Birdman5', difficulty: '5a'},
-            { name: 'Birdman6', difficulty: '5a'}
-        ]);
-
-        return defered.promise;
+    all() {
+        return this.$http.get(`${baseUrl}/routes`).then(r => r.data);
     }
 }

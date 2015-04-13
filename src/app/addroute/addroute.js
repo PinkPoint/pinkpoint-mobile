@@ -1,17 +1,18 @@
 export default class AddRouteModal {
-    constructor($rootScope, $ionicModal, $q, pinkPointApi) {
+    constructor($rootScope, $ionicModal, $q, routes) {
         this.modalScope = $rootScope.$new();
         this.$ionicModal = $ionicModal;
         this.$q = $q;
-
-        pinkPointApi.getAll().then(routes => {
-            this.modalScope.routes = routes;
-        });
+        this.routes = routes;
 
         this.initModal();
     }
 
     open() {
+        this.routes.all().then(routes => {
+            this.modalScope.routes = routes;
+        });
+
         this.modal.show();
         this.defered = this.$q.defer();
         return this.defered.promise;

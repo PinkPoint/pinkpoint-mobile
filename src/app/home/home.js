@@ -1,23 +1,15 @@
 export default class HomeCtrl {
-    constructor(addRouteModal) {
+    constructor(addRouteModal, ascents) {
         this.addRouteModal = addRouteModal;
-        this.dummydata();
+
+        ascents.byClimber().then(ascents => {
+            this.routesToday = ascents.map(a => {return a.route});
+        });
     }
 
     addRoute() {
         this.addRouteModal.open().then(r => {
             this.routesToday.unshift(r);
         });
-    }
-
-    dummydata() {
-        this.routesToday = [
-            { name: 'Dreamcatcher', difficulty: '6a'},
-            { name: 'Dreamcatcher', difficulty: '6a'},
-            { name: 'Dreamcatcher', difficulty: '6a'},
-            { name: 'Dreamcatcher', difficulty: '6a'},
-            { name: 'Dreamcatcher', difficulty: '6a'},
-            { name: 'Dreamcatcher', difficulty: '6a'}
-        ];
     }
 }
